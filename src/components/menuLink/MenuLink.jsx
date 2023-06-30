@@ -1,6 +1,6 @@
 import "./menulink.css";
 
-export default function MenuLink({ icon, text }) {
+const MenuLink = ({ icon, text }) => {
   return (
     <div className="menulink">
       {icon}
@@ -11,3 +11,5 @@ export default function MenuLink({ icon, text }) {
     </div>
   );
 }
+
+export default MenuLink

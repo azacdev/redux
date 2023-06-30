@@ -1,24 +1,24 @@
-import { useContext } from "react";
+// import { useContext } from "react";
 import Warning from "../warning/Warning";
 import "./update.css";
 // import { update, remove } from "../../redux/userSlice";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+// import { useSelector } from "react-redux";
+// import { useDispatch } from "react-redux";
 import { useState } from "react";
-import { updateUser2 } from "../../redux/userSlice";
+// import { updateUser2 } from "../../redux/userSlice";
 
 const Update = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const user = useSelector((state) => state.user);
-  const dispatch = useDispatch();
+  // const user = useSelector((state) => state.user);
+  // const dispatch = useDispatch();
 
   const handleClick = (e) => {
     e.preventDefault();
     // without API
     // dispatch(update({ name, email }));
     // with API
-    dispatch(updateUser2({ name, email }));
+    // dispatch(updateUser2({ name, email }));
   };
 
   return (
@@ -28,7 +28,7 @@ const Update = () => {
         <Warning />
         <button className="delete">Delete Account</button>
         <div className="updateContainer">
-          <form>
+          {/* <form>
             <div className="formItem">
               <label>Profile Picture</label>
               <div className="profilePic">
@@ -73,7 +73,7 @@ const Update = () => {
             {user.pending === false && (
               <span className="success">Account has been updated!</span>
             )}
-          </form>
+          </form> */}
         </div>
       </div>
     </div>

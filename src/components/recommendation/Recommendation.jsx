@@ -21,6 +21,6 @@ const Recommendation = ({ type }) => {
       <img className="rightImg" src={img} alt="" />
     </div>
   );
-}
+};
 
-export default Recommendation
+export default Recommendation;

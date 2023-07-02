@@ -1,17 +1,17 @@
 // import { useContext } from "react";
 import Warning from "../warning/Warning";
 import "./update.css";
-// import { update, remove } from "../../redux/userSlice";
-// import { useSelector } from "react-redux";
-// import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
+import { selectedUserName } from "../../redux/userSlice";
 import { useState } from "react";
-// import { updateUser2 } from "../../redux/userSlice";
 
 const Update = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  // const user = useSelector((state) => state.user);
-  // const dispatch = useDispatch();
+  const UserName = useSelector(selectedUserName)
+  // const dispatch = useDispatch()
+  console.log(name, email);
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -28,7 +28,7 @@ const Update = () => {
         <Warning />
         <button className="delete">Delete Account</button>
         <div className="updateContainer">
-          {/* <form>
+          <form>
             <div className="formItem">
               <label>Profile Picture</label>
               <div className="profilePic">
@@ -45,8 +45,8 @@ const Update = () => {
               <input
                 className="formInput"
                 type="text"
-                placeholder={user.user.name}
-                onChange={(e) => setName(e.target.value)}
+                // placeholder={user.user.name}
+                onChange={e => setName(e.target.value)}
               />
             </div>
             <div className="formItem">
@@ -54,8 +54,8 @@ const Update = () => {
               <input
                 className="formInput"
                 type="text"
-                placeholder={user.user.email}
-                onChange={(e) => setEmail(e.target.value)}
+                // placeholder={user.user.email}
+                onChange={e => setEmail(e.target.value)}
               />
             </div>
             <div className="formItem">
@@ -63,21 +63,21 @@ const Update = () => {
               <input className="formInput" type="password" />
             </div>
             <button
-              disabled={user.pending}
+              // disabled={user.pending}
               className="updateButton"
               onClick={handleClick}
             >
               Update
             </button>
-            {user.error && <span className="error">Something went wrong!</span>}
+            {/* {user.error && <span className="error">Something went wrong!</span>}
             {user.pending === false && (
               <span className="success">Account has been updated!</span>
-            )}
-          </form> */}
+            )} */}
+          </form>
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default Update
+export default Update;

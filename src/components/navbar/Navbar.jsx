@@ -1,9 +1,10 @@
 import { ArrowDropDown } from "@material-ui/icons";
-// import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";
+import { selectedUserName } from "../../redux/userSlice";
 import "./navbar.css";
 
 const Navbar = () => {
-  // const name = useSelector((state) => state.user.userInfo.name);
+  const name = useSelector(selectedUserName)
   console.log("navbar rendered!");
   return (
     <div className="navbar">
@@ -29,7 +30,7 @@ const Navbar = () => {
             src="https://images.pexels.com/photos/3024627/pexels-photo-3024627.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
             alt=""
           />
-          {/* <span className="navbarName">{name}</span> */}
+          <span className="navbarName">{name}</span>
           <ArrowDropDown />
         </div>
       </div>

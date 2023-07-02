@@ -3,13 +3,14 @@ import Warning from "../warning/Warning";
 import "./update.css";
 import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
+import { selectedUser } from "../../redux/userSlice";
 import { selectedUserName } from "../../redux/userSlice";
 import { useState } from "react";
 
 const Update = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const UserName = useSelector(selectedUserName)
+  const user = useSelector(selectedUser)
   // const dispatch = useDispatch()
   console.log(name, email);
 

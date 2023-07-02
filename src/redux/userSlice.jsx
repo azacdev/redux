@@ -16,6 +16,7 @@ const userSlice = createSlice({
   },
 });
 
+export const selectedUser = state => state.user
 export const selectedUserName = state => state.user.name
 export const selectedUserEmail = state => state.user.email
 export const { update } = userSlice.actions;

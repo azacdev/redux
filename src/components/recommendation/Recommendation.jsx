@@ -1,9 +1,12 @@
+import { useSelector } from "react-redux";
+import { selectedUserName } from "../../redux/userSlice";
 import "./recommendation.css";
 
 const Recommendation = ({ type }) => {
+  const name = useSelector(selectedUserName)
   const title =
     type === "user"
-      ? "Reccomended for John"
+      ? `Reccomended for ${name}`
       : type === "popular"
       ? "Popular on Lama App"
       : "Editor's choice";

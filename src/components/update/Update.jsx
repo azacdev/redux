@@ -1,26 +1,21 @@
-// import { useContext } from "react";
 import Warning from "../warning/Warning";
 import "./update.css";
 import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
 import { selectedUser } from "../../redux/userSlice";
-import { selectedUserName } from "../../redux/userSlice";
+import { update } from "../../redux/userSlice";
 import { useState } from "react";
 
 const Update = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const user = useSelector(selectedUser)
-  // const dispatch = useDispatch()
-  console.log(name, email);
+  const dispatch = useDispatch()
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    // without API
-    // dispatch(update({ name, email }));
-    // with API
-    // dispatch(updateUser2({ name, email }));
-  };
+  const handleUpdate = (e) => {
+    e.preventDefault()
+    dispatch(update({name, email}))
+  }
 
   return (
     <div className="update">
@@ -46,7 +41,7 @@ const Update = () => {
               <input
                 className="formInput"
                 type="text"
-                // placeholder={user.user.name}
+                placeholder={user.name}
                 onChange={e => setName(e.target.value)}
               />
             </div>
@@ -55,7 +50,7 @@ const Update = () => {
               <input
                 className="formInput"
                 type="text"
-                // placeholder={user.user.email}
+                placeholder={user.email}
                 onChange={e => setEmail(e.target.value)}
               />
             </div>
@@ -66,7 +61,7 @@ const Update = () => {
             <button
               // disabled={user.pending}
               className="updateButton"
-              onClick={handleClick}
+              onClick={handleUpdate}
             >
               Update
             </button>

@@ -5,7 +5,6 @@ import "./navbar.css";
 
 const Navbar = () => {
   const name = useSelector(selectedUserName)
-  console.log("navbar rendered!");
   return (
     <div className="navbar">
       <div className="navbarWrapper">

@@ -6,7 +6,7 @@ const Recommendation = ({ type }) => {
   const name = useSelector(selectedUserName)
   const title =
     type === "user"
-      ? `Reccomended for ${name}`
+      ? `Recomended for ${name}`
       : type === "popular"
       ? "Popular on Lama App"
       : "Editor's choice";

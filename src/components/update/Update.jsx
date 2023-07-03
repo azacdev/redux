@@ -1,28 +1,35 @@
 import Warning from "../warning/Warning";
 import "./update.css";
-import { useSelector } from "react-redux"
-import { useDispatch } from "react-redux"
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { selectedUser } from "../../redux/userSlice";
-import { update } from "../../redux/userSlice";
+import { update, remove } from "../../redux/userSlice";
 import { useState } from "react";
 
 const Update = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const user = useSelector(selectedUser)
-  const dispatch = useDispatch()
+  const user = useSelector(selectedUser);
+  const dispatch = useDispatch();
 
   const handleUpdate = (e) => {
-    e.preventDefault()
-    dispatch(update({name, email}))
-  }
+    e.preventDefault();
+    dispatch(update({ name, email }));
+  };
+
+  const handleDelete = (e) => {
+    e.preventDefault();
+    dispatch(remove());
+  };
 
   return (
     <div className="update">
       <div className="updateWrapper">
         <h3 className="updateTitle">Update Your Account</h3>
         <Warning />
-        <button className="delete">Delete Account</button>
+        <button className="delete" onClick={handleDelete}>
+          Delete Account
+        </button>
         <div className="updateContainer">
           <form>
             <div className="formItem">
@@ -42,7 +49,7 @@ const Update = () => {
                 className="formInput"
                 type="text"
                 placeholder={user.name}
-                onChange={e => setName(e.target.value)}
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
             <div className="formItem">
@@ -51,7 +58,7 @@ const Update = () => {
                 className="formInput"
                 type="text"
                 placeholder={user.email}
-                onChange={e => setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="formItem">

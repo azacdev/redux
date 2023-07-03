@@ -13,8 +13,11 @@ import {
 } from "@material-ui/icons";
 import MenuLink from "../menuLink/MenuLink";
 import "./leftbar.css";
+import { selectedUserName } from "../../redux/userSlice";
+import { useSelector } from "react-redux";
 
 const Leftbar = () => {
+  const name = useSelector(selectedUserName)
   return (
     <div className="leftbar">
       <div className="leftbarWrapper">
@@ -28,7 +31,8 @@ const Leftbar = () => {
         <MenuLink icon={<ScheduleOutlined />} text="Schedule" />
         <MenuLink icon={<HearingOutlined />} text="Wishlist" />
         <MenuLink icon={<Settings />} text="Settings" />
-        <MenuLink icon={<ExitToAppOutlined />} text="Logout" />
+        {name ? <MenuLink icon={<ExitToAppOutlined />} text="Logout" /> : ""}
+        
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import { selectedUserName } from "../../redux/userSlice";
 import "./navbar.css";
 
 const Navbar = () => {
-  const name = useSelector(selectedUserName)
+  const name = useSelector(selectedUserName);
   return (
     <div className="navbar">
       <div className="navbarWrapper">
@@ -24,13 +24,19 @@ const Navbar = () => {
           </div>
         </div>
         <div className="navbarRight">
-          <img
-            className="avatar"
-            src="https://images.pexels.com/photos/3024627/pexels-photo-3024627.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            alt=""
-          />
-          <span className="navbarName">{name}</span>
-          <ArrowDropDown />
+          {name ? (
+            <>
+              <img
+                className="avatar"
+                src="https://images.pexels.com/photos/3024627/pexels-photo-3024627.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                alt=""
+              />
+              <span className="navbarName">{name}</span>
+              <ArrowDropDown />
+            </>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </div>

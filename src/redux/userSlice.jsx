@@ -39,6 +39,7 @@ const userSlice = createSlice({
 });
 
 export const selectedUser = (state) => state.user.userInfo;
+export const userPending = (state) => state.user.pending;
 export const selectedUserName = (state) => state.user.userInfo.name;
 export const selectedUserEmail = (state) => state.user.userInfo.email;
 // export const { update, remove, addHello } = userSlice.actions;

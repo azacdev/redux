@@ -2,7 +2,7 @@ import Warning from "../warning/Warning";
 import "./update.css";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { selectedUser } from "../../redux/userSlice";
+import { selectedUser, userPending } from "../../redux/userSlice";
 // import { update, remove } from "../../redux/userSlice";
 import { useState } from "react";
 import updateUser from "../../redux/apiCalls";
@@ -67,7 +67,7 @@ const Update = () => {
               <input className="formInput" type="password" />
             </div>
             <button
-              // disabled={user.pending}
+              disabled={userPending}
               className="updateButton"
               onClick={handleUpdate}
             >

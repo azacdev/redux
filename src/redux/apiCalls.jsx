@@ -5,7 +5,7 @@ const updateUser = async (user, dispatch) => {
   dispatch(updateStart());
   try {
     const res = await axios.get(
-      "https://localhost:8800/api/users/123/update",
+      "https://localhost:8800/api/users/123/updated",
       user
     );
     dispatch(updateSuccess(res.data));
